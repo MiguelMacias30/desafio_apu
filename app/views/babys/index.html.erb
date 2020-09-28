@@ -1,0 +1,13 @@
+<h1>Babys</h1>
+
+<table>
+  <tr>
+    <th>nombre</th>
+    <th>cantidad de veces que ha tomado</th>
+  </tr>
+  <% @babys.each do |b| %>
+    <tr>
+      <td><%=b.name%></td>
+    </tr>
+  <% end %>
+</table>
