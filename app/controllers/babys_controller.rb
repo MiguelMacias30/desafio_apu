@@ -5,5 +5,8 @@ class BabysController < ApplicationController
 
   def show
     @baby = Baby.find(params[:id])
+    @cont = 0
+    @cantidad = 0
+    @time = 0
   end
 end

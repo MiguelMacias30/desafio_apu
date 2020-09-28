@@ -1,2 +1,18 @@
-<h1>Babys#show</h1>
-<p>Find me in app/views/babys/show.html.erb</p>
+<h1>Babys</h1>
+
+<%Baby.find(1).breastfeeding.where("DATE(created_at) = ?", Date.today).each do |v|%>
+<%@cont += 1%>
+ <%end%>
+  <b>cuantas veces tomo leche:</b><%=@cont%>
+  <p></p>
+  <b>la ultima vez que tomo leche:</b><%=@baby.breastfeeding.all.last.created_at%>
+  <p></p>
+  <%Baby.find(1).breastfeeding.where("DATE(created_at) = ?", Date.today).each do |cant|%>
+  <%@cantidad += cant.cant%>
+   <%end%>
+  <b>cuanto ha tomado hoy:</b><%=@cantidad%>
+  <p></p>
+  <%Baby.find(1).breastfeeding.where("DATE(created_at) = ?", Date.today).each do |time|%>
+  <%@time += time.time%>
+   <%end%>
+  <b>el tiempo que uso para tomar hoy fue de:</b><%=@time%>
